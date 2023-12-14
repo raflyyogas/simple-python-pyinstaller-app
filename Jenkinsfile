@@ -35,7 +35,7 @@ node {
                 def dockerImage = 'cdrx/pyinstaller-linux:python2'
                 def workspacePath = "/var/jenkins_home/workspace/submission-cicd-pipeline-raflyyogas"
 
-                sh "docker run --rm -v ${workspacePath}/sources:/src ${dockerImage} 'pyinstaller -F /src/add2vals.py'"
+                sh "docker run --rm -v ${workspacePath}/sources:/src ${dockerImage} pyinstaller -F /src/add2vals.py"
 
                 // Archiving artifacts
                 archiveArtifacts artifacts: 'sources/add2vals.py', followSymlinks: false
